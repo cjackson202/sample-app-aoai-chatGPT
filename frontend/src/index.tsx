@@ -1,16 +1,17 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { HashRouter, Route, Routes } from 'react-router-dom'
-import { initializeIcons } from '@fluentui/react'
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { HashRouter, Route, Routes } from 'react-router-dom';
+import { initializeIcons } from '@fluentui/react';
 
-import Chat from './pages/chat/Chat'
-import Layout from './pages/layout/Layout'
-import NoPage from './pages/NoPage'
-import { AppStateProvider } from './state/AppProvider'
+import Chat from './pages/chat/Chat';
+import Layout from './pages/layout/Layout';
+import NoPage from './pages/NoPage';
+import { AppStateProvider } from './state/AppProvider';
 
-import './index.css'
+import './index.css';
 
-initializeIcons()
+// Initialize icons with the specific URL
+initializeIcons('https://res.cdn.office.net/files/fabric-cdn-prod_20240129.001/assets/icons/');
 
 export default function App() {
   return (
@@ -24,11 +25,11 @@ export default function App() {
         </Routes>
       </HashRouter>
     </AppStateProvider>
-  )
+  );
 }
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <App />
   </React.StrictMode>
-)
+);
